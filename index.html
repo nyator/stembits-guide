@@ -64,14 +64,21 @@ h1{font-weight:600;font-size:clamp(64px,15.5vw,236px);line-height:.86;letter-spa
 
 /* tabs: index list */
 .idx{list-style:none;margin:0;padding:0}
-.idx li{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:24px;padding:26px 0;border-top:1px solid var(--line);align-items:baseline}
-.idx li:last-child{border-bottom:1px solid var(--line)}
+.idx>li{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:24px;padding:26px 0;border-top:1px solid var(--line);align-items:baseline}
+.idx>li:last-child{border-bottom:1px solid var(--line)}
 .idx h3{margin:0;font-weight:500;font-size:clamp(26px,3vw,40px);letter-spacing:-.035em;line-height:1;position:relative;transition:transform .4s var(--ease)}
 .idx h3::before{content:"";position:absolute;left:-22px;top:50%;margin-top:-4.5px;width:9px;height:9px;border-radius:50%;background:var(--red);transform:scale(0);transition:transform .3s var(--ease)}
-.idx li:hover h3{transform:translateX(22px)}
-.idx li:hover h3::before{transform:scale(1)}
+.idx>li:hover h3{transform:translateX(22px)}
+.idx>li:hover h3::before{transform:scale(1)}
 .idx p{margin:0;color:var(--mute);max-width:52ch}
 
+.ft{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:0}
+.ft li{display:grid;grid-template-columns:minmax(0,11em) minmax(0,1fr);gap:16px;padding:11px 0;border-top:1px solid var(--line);font-size:15.5px;line-height:1.5}
+.ft b{font-weight:500;color:var(--ink)}
+.ft span{color:var(--mute)}
+.idx li .ft li{border-bottom:0}
+.tips h3{font-size:clamp(22px,2.4vw,30px)}
+@media(max-width:600px){.ft li{grid-template-columns:1fr;gap:2px}}
 /* scenes */
 .scenes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px clamp(32px,6vw,96px)}
 .scenes h3{font-weight:500;font-size:21px;letter-spacing:-.015em;margin:0 0 10px}
@@ -151,12 +158,26 @@ footer{padding:clamp(88px,13vw,180px) 0 32px;border-top:1px solid var(--line)}
       <div class="lbl"><span>Inside the app</span><span>Six tabs</span></div>
       <h2 id="h-tabs">Everything has its own place.</h2>
       <ul class="idx">
-        <li><h3>Session</h3><p>Build your own set from the loops you want for a gig, service or rehearsal. Switch the click on or off per session and send it left, right or centre. You can also control your Ableton Live sets and setlists from here.</p></li>
-        <li><h3>Loops</h3><p>Drum and groove loops sorted by style (Worship, Praise, Funk) and by artist. They start the moment you tap and repeat with no gap. Change the speed and the pitch stays put.</p></li>
-        <li><h3>Pads</h3><p>Soft, held sounds in any key that fade smoothly from one to the next. Made for prayer, transitions and intros.</p></li>
-        <li><h3>Click</h3><p>A steady metronome. Set your speed and pan it so it lives only in your earpiece.</p></li>
-        <li><h3>Store</h3><p>Browse and download new loops and packs for your library.</p></li>
-        <li><h3>Settings</h3><p>Manage your account and set the app up the way you like it.</p></li>
+        <li><h3>Session</h3><div><p>Your set for the night. Gather the loops you need for a gig, service or rehearsal and keep them together in one place.</p><ul class="ft"><li><b>Build a set</b><span>Pick loops from your library and save them as a session you can reopen any time.</span></li><li><b>Volume per loop</b><span>Set how loud each loop sits, so the groove never drowns you out.</span></li><li><b>Pan per loop</b><span>Send each loop left, right or centre.</span></li><li><b>Click per session</b><span>Switch the click on or off for each session, with its own volume and pan.</span></li><li><b>Ableton Live</b><span>Control your Live sets and setlists right from your phone.</span></li></ul></div></li>
+        <li><h3>Loops</h3><div><p>Your library of drum and groove loops.</p><ul class="ft"><li><b>Browse</b><span>Sorted by style (Worship, Praise, Funk) and by artist.</span></li><li><b>Import your own</b><span>Bring in loops from your phone and use them just like the built-in ones.</span></li><li><b>Instant start</b><span>Loops are ready before you tap, so there is no waiting mid-song.</span></li><li><b>No gaps</b><span>Every loop repeats cleanly, bar after bar.</span></li><li><b>Change the speed</b><span>Slow a loop down or push it faster and the pitch stays where it is.</span></li></ul></div></li>
+        <li><h3>Pads</h3><div><p>Soft, held sounds that fill the space under your playing.</p><ul class="ft"><li><b>Any key</b><span>Choose the key of the song and the pad follows.</span></li><li><b>Smooth changes</b><span>Move to a new key and the pads fade across, with no clicks or jumps.</span></li><li><b>Made for the in-between</b><span>Prayer, transitions, intros and quiet moments.</span></li></ul></div></li>
+        <li><h3>Click</h3><div><p>A steady metronome that keeps everyone together.</p><ul class="ft"><li><b>Tempo</b><span>Set the speed in beats per minute.</span></li><li><b>Time signatures</b><span>Play in 4/4, 3/4, 6/8 and more, with beat one accented so you always know where the bar starts.</span></li><li><b>Volume and pan</b><span>Turn it up or down, and pan it so it lives only in your earpiece.</span></li><li><b>Rock solid</b><span>The click runs on its own engine, so it stays in time even while loops and pads play.</span></li></ul></div></li>
+        <li><h3>Store</h3><div><p>New sounds for your library.</p><ul class="ft"><li><b>Packs</b><span>Browse and download new loops and packs.</span></li><li><b>Always growing</b><span>New packs appear in the store as they are released.</span></li></ul></div></li>
+        <li><h3>Settings</h3><div><p>Make the app yours.</p><ul class="ft"><li><b>Account</b><span>Manage your sign-in and profile.</span></li><li><b>Preferences</b><span>Set the app up the way you like to work.</span></li></ul></div></li>
+      </ul>
+    </div>
+  </section>
+
+
+  <section class="sec" aria-labelledby="h-tips">
+    <div class="w">
+      <div class="lbl"><span>Good to know</span><span>Before your first gig</span></div>
+      <h2 id="h-tips">A few tips from the stage.</h2>
+      <ul class="idx tips">
+        <li><h3>Click in your ear only</h3><div><p>Pan the click hard left and the music hard right. Then use a stereo splitter cable (one 3.5 mm plug to two outputs) and send the left side to your earpiece and the right side to the speakers. You hear the click, the room hears the band.</p></div></li>
+        <li><h3>Build sessions ahead</h3><div><p>Set up a session for each gig or service the day before, with volumes and pans already balanced. On the night you just open it and play.</p></div></li>
+        <li><h3>Count yourself in</h3><div><p>Start the click a bar before the loop so you and the team feel the tempo before the groove drops.</p></div></li>
+        <li><h3>Tell us what breaks</h3><div><p>Stembits is in beta on TestFlight. Send feedback from TestFlight, including a screenshot, and it goes straight to the team.</p></div></li>
       </ul>
     </div>
   </section>
